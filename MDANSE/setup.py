@@ -4,41 +4,36 @@ with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='example_pypi_package',
-    author='Tom Chen',
-    author_email='tomchen.org@gmail.com',
-    description='Example PyPI (Python Package Index) Package',
-    keywords='example, pypi, package',
+    name='MDANSE',
+    author='Maciej Bartkowiak',
+    author_email='maciej.bartkowiak@stfc.ac.uk',
+    description='MDANSE Core package - Molecular Dynamics trajectory handling and analysis code',
+    keywords='molecular dynamics, science, simulation, analysis',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/tomchen/example_pypi_package',
+    url='https://www.isis.stfc.ac.uk/Pages/MDANSEproject.aspx',
     project_urls={
-        'Documentation': 'https://github.com/tomchen/example_pypi_package',
+        'Documentation': 'https://mdanse.readthedocs.io/en/latest/',
         'Bug Reports':
-        'https://github.com/tomchen/example_pypi_package/issues',
-        'Source Code': 'https://github.com/tomchen/example_pypi_package',
+        'https://github.com/ISISNeutronMuon/MDANSE/issues',
+        'Source Code': 'https://github.com/ISISNeutronMuon/MDANSE',
         # 'Funding': '',
         # 'Say Thanks!': '',
     },
-    package_dir={'': 'src'},
-    packages=setuptools.find_packages(where='src'),
     classifiers=[
         # see https://pypi.org/classifiers/
-        'Development Status :: 5 - Production/Stable',
+        'Development Status :: 4 - Beta',
 
-        'Intended Audience :: Developers',
+        'Intended Audience :: Science/Research',
         'Topic :: Software Development :: Build Tools',
 
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3 :: Only',
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
         'Operating System :: OS Independent',
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.9',
     # install_requires=['Pillow'],
     extras_require={
         'dev': ['check-manifest'],
