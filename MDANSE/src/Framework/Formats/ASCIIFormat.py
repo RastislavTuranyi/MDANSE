@@ -14,7 +14,7 @@
 # **************************************************************************
 
 import os
-import StringIO
+from io import StringIO
 import tarfile
 
 import numpy
@@ -54,7 +54,7 @@ class ASCIIFormat(IFormat):
         
         for var in data.values():
 
-            tempStr = StringIO.StringIO()
+            tempStr = StringIO()
             tempStr.write(var.info())
             tempStr.write('\n\n')            
             cls.write_array(tempStr,var)
@@ -65,7 +65,7 @@ class ASCIIFormat(IFormat):
             tf.addfile(tarinfo=info, fileobj=tempStr)
             
         if header:
-            tempStr = StringIO.StringIO()
+            tempStr = StringIO()
             tempStr.write(header)
             tempStr.write('\n\n')  
             tempStr.seek(0)

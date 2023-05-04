@@ -1,3 +1,59 @@
 [build-system]
 requires = ["setuptools>=46.4.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "MDANSE"
+version = "2.0.0"
+description = 'MDANSE GUI - the graphical interface for MDANSE'
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+keywords = ["molecular dynamics", "science", "simulation", "analysis"]
+authors = [
+  {name = "Maciej Bartkowiak", email = "maciej.bartkowiak@stfc.ac.uk"}
+]
+maintainers = [
+  {name = "Sanghamitra Mukhopadhyay", email = "sanghamitra.mukhopadhyay@stfc.ac.uk"}
+]
+classifiers = [
+        'Development Status :: 3 - Alpha',
+
+        'Intended Audience :: Science/Research',
+        'Topic :: Software Development :: Build Tools',
+
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3 :: Only',
+        'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
+        'Operating System :: OS Independent'
+]
+
+dependencies = [
+  "MDANSE",
+  "scipy",
+  "h5py",
+]
+
+# dynamic = ["version", "description"]
+
+[project.optional-dependencies]
+gui = ["PyQt5"]
+cli = [
+  "rich",
+  "click",
+]
+
+[project.urls]
+homepage = "https://www.isis.stfc.ac.uk/Pages/MDANSEproject.aspx"
+documentation = "https://mdanse.readthedocs.io/en/latest/"
+repository = "https://github.com/ISISNeutronMuon/MDANSE"
+
+[project.scripts]
+spam-cli = "spam:main_cli"
+
+[project.gui-scripts]
+spam-gui = "spam:main_gui"
+
+[project.entry-points."spam.magical"]
+tomatoes = "spam:main_tomatoes"
